@@ -9,8 +9,8 @@ from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, Messa
 API_ID = 31873798
 API_HASH = '7a29803bd239bb321cce7b242f1ddb14'
 
-# توكن بوت تيليجرام الخاص بك (ستحصل عليه من @BotFather)
-BOT_TOKEN = os.environ.get("8811083898:AAE_HXEX7w7ncCuOGHrKk7dsiwuyj5y9PiI", "ضع_توكن_البوت_هنا_إذا_لم تستخدم_Environment_Variables")
+# توكن بوت تيليجرام الخاص بك
+BOT_TOKEN = "8811083898:AAE_HXEX7w7ncCuOGHrKk7dsiwuyj5y9PiI"
 
 # إنشاء عميل Telethon (جلسة لحسابك الشخصي)
 client = TelegramClient('bot_watan_session', API_ID, API_HASH)
@@ -30,7 +30,6 @@ async def send_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not text.startswith('/send'):
         return
 
-    # استخراج المدخلات بعد أمر /send
     try:
         content = text[len('/send'):].strip()
         parts = [p.strip() for p in content.split('|')]
@@ -71,11 +70,9 @@ async def send_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await status_msg.edit_text(f"✅ تمت العملية بنجاح! تم إرسال {sent} من أصل {count} رسالة.")
 
 def main():
-    # ربط جلسة Telethon
     loop = asyncio.get_event_loop()
     loop.run_until_complete(client.connect())
 
-    # تشغيل بوت تيليجرام التفاعلي
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     
     app.add_handler(CommandHandler("start", start_command))
