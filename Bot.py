@@ -10,7 +10,7 @@ API_ID = 31873798
 API_HASH = '7a29803bd239bb321cce7b242f1ddb14'
 
 # توكن بوت تيليجرام الخاص بك (ستحصل عليه من @BotFather)
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "ضع_توكن_البوت_هنا_إذا_لم تستخدم_Environment_Variables")
+BOT_TOKEN = os.environ.get("8811083898:AAE_HXEX7w7ncCuOGHrKk7dsiwuyj5y9PiI", "ضع_توكن_البوت_هنا_إذا_لم تستخدم_Environment_Variables")
 
 # إنشاء عميل Telethon (جلسة لحسابك الشخصي)
 client = TelegramClient('bot_watan_session', API_ID, API_HASH)
